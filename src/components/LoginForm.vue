@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="handleSubmit">
+    <h2>Login</h2>
     <input
       type="text"
       required
