@@ -6,7 +6,7 @@
     <div class="right">
       <div v-if="showLogin">
         <h1>Login</h1>
-        <LoginForm />
+        <LoginForm @login="enterChat" />
         <p>
           No account yet?
           <span @click="showLogin = false"> Sign up </span>instead
@@ -14,7 +14,7 @@
       </div>
       <div v-else>
         <h1>Sign up</h1>
-        <SignupForm />
+        <SignupForm @signup="enterChat" />
         <p>
           Already registered?
           <span @click="showLogin = true"> Login </span>instead
@@ -28,12 +28,17 @@
 import SignupForm from "../components/SignupForm.vue";
 import LoginForm from "../components/LoginForm.vue";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 export default {
   components: { SignupForm, LoginForm },
   setup() {
     const showLogin = ref(true);
-    return { showLogin };
+    const router = useRouter();
+    const enterChat = () => {
+      router.push({ name: "Chatroom" });
+    };
+    return { showLogin, enterChat };
   },
 };
 </script>
@@ -75,10 +80,11 @@ export default {
   background: linear-gradient(to right, rgb(79, 80, 80), rgba(79, 80, 80, 1)),
     linear-gradient(
       to right,
-      rgb(244, 49, 120),
-      rgba(248, 241, 42, 0.97),
-      rgb(94, 216, 167),
-      rgb(84, 160, 235)
+      rgb(247, 103, 156),
+      rgba(250, 248, 129, 0.97),
+      rgb(2, 251, 151),
+      rgb(94, 150, 254),
+      rgb(172, 117, 255)
     );
   background-size: 100% 3px, 0 2px;
   background-position: 100% 100%, 0 100%;
