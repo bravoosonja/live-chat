@@ -56,4 +56,8 @@ nav p.email {
   font-size: 14px;
   color: var(--color-text);
 }
+
+nav button {
+  width: 150px;
+}
 </style>

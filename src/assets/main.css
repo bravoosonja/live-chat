@@ -21,12 +21,22 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1241px) {
   body {
     display: flex;
     place-items: center;
   }
 }
+
+/* @media (max-width: 1240px) {
+  body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+} */
 
 button {
   background-color: var(--color-border);
@@ -47,6 +57,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: 20vw;
 }
 
 button:hover {
