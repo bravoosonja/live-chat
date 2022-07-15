@@ -1,11 +1,25 @@
 <template>
   <div class="welcome">
-    <span class="banner-text">CHAT</span>
-    <div v-if="showLogin">
-      <LoginForm />
+    <div class="left">
+      <span class="banner-text">CHAT</span>
     </div>
-    <div v-else>
-      <SignupForm />
+    <div class="right">
+      <div v-if="showLogin">
+        <h1>Login</h1>
+        <LoginForm />
+        <p>
+          No account yet?
+          <span @click="showLogin = false"> Sign up </span>instead
+        </p>
+      </div>
+      <div v-else>
+        <h1>Sign up</h1>
+        <SignupForm />
+        <p>
+          Already registered?
+          <span @click="showLogin = true"> Login </span>instead
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -26,18 +40,46 @@ export default {
 
 <style>
 .welcome {
-  display: flex;
-  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  text-align: center;
+  justify-content: center;
   align-items: center;
 }
-.welcome form {
+
+.right {
   background-color: var(--color-background-mute);
   border-radius: 10px;
   padding: 2rem;
+  height: 100%;
+  width: 100%;
 }
 
-.welcome form > h2 {
-  text-align: center;
+.right p {
+  margin-top: 1rem;
+  font-size: 14px;
+}
+
+.right span {
+  cursor: pointer;
+  background: linear-gradient(to right, rgb(79, 80, 80), rgba(79, 80, 80, 1)),
+    linear-gradient(
+      to right,
+      rgb(244, 49, 120),
+      rgba(248, 241, 42, 0.97),
+      rgb(94, 216, 167),
+      rgb(84, 160, 235)
+    );
+  background-size: 100% 3px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+  font-weight: 700;
+}
+
+.right span:hover {
+  background-size: 0 3px, 100% 3px;
 }
 
 .welcome input {
@@ -54,7 +96,7 @@ export default {
 
 .banner-text {
   font-weight: 700;
-  font-size: 17rem;
+  font-size: 18rem;
   line-height: 1;
   margin-left: 0;
   margin-right: 3rem;
