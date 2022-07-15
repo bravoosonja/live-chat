@@ -2,10 +2,10 @@
   <div class="chat-window">
     <div v-if="error">{{ error }}</div>
     <div v-if="documents" class="messages">
-      <div v-for="doc in documents" :key="doc.id" class="single">
-        <span class="created-at">{{ doc.createdAt.toDate() }}</span>
+      <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
         <span class="name">{{ doc.name }}</span>
-        <span class="messages">{{ doc.message }}</span>
+        <span class="message">{{ doc.message }}</span>
+        <span class="created-at">{{ doc.createdAt }}</span>
       </div>
     </div>
   </div>
@@ -13,10 +13,23 @@
 
 <script>
 import getCollection from "../composables/getCollection";
+import { computed } from "vue";
+import { formatDistanceToNow } from "date-fns";
+
 export default {
   setup() {
     const { error, documents } = getCollection("messages");
-    return { error, documents };
+
+    const formattedDocuments = computed(() => {
+      if (documents.value) {
+        return documents.value.map((doc) => {
+          let time = formatDistanceToNow(doc.createdAt.toDate());
+          return { ...doc, createdAt: time };
+        });
+      }
+    });
+
+    return { error, documents, formattedDocuments };
   },
 };
 </script>
@@ -29,6 +42,7 @@ export default {
   width: 100%;
   outline: 1px solid var(--color-border);
   border-radius: 8px;
+  max-width: 60vw;
 }
 
 .single {
@@ -37,25 +51,44 @@ export default {
   border-radius: 8px;
   padding: 1rem;
   height: 100%;
+  position: relative;
+  max-width: 60vw;
+  display: flex;
+  align-items: center;
 }
 
 .created-at {
-  display: block;
-  margin-bottom: 10px;
+  grid-area: "crated-at";
   font-size: 12px;
+  position: absolute;
+  right: 1rem;
+  font-style: italic;
 }
 
 .name {
-  color: var(--color-background);
-  background: linear-gradient(220.55deg, #eaeaea 0%, #8b8b8b 100%);
+  grid-area: "name";
+  color: var(--color-heading);
+  background-image: linear-gradient(
+    -225deg,
+    #5271c4 0%,
+    #b19fff 48%,
+    #eca1fe 100%
+  );
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
   margin-right: 1.5rem;
   font-weight: 700;
 }
 
+.message {
+  width: 38vw;
+}
+
 .messages {
-  max-height: 400px;
+  grid-area: "message";
+  max-height: 80vh;
+  max-width: 60vw;
+  word-wrap: break-word;
   overflow: auto;
 }
 </style>
