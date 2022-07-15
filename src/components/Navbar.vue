@@ -32,7 +32,7 @@ export default {
 
 <style>
 nav {
-  padding: 2rem;
+  padding: 1.3rem;
   outline: 2px solid var(--color-border);
   border-radius: 8px;
   display: flex;

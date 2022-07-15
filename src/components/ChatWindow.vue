@@ -52,7 +52,7 @@ export default {
 }
 
 .single {
-  margin: 1rem 0;
+  margin: 1rem 1.3rem;
   background-color: var(--color-background-soft);
   border-radius: 8px;
   padding: 1rem;

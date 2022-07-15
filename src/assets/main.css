@@ -73,6 +73,20 @@ button:focus-visible {
   box-shadow: none;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-border);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+}
+
 .error {
   font-size: 14px;
   color: #ff006e;

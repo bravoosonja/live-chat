@@ -53,9 +53,9 @@ textarea {
   color: var(--color-heading);
   font-family: inherit;
   font-size: 16px;
-  outline: 1px solid var(--color-border-hover);
+  outline: 2px solid var(--color-border);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1.3rem;
   border: 0;
   box-sizing: border-box;
 }
