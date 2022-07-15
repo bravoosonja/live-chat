@@ -46,12 +46,12 @@ nav {
 nav p {
   margin: 2px auto;
   font-size: 18px;
-
-  color: var(--color-heading);
+  color: var(--color-text);
 }
 
 nav span {
   font-weight: 700;
+  color: var(--color-text);
 }
 
 nav p.email {
@@ -61,6 +61,6 @@ nav p.email {
 
 nav button {
   width: 150px;
-  color: var(--color-heading);
+  color: var(--color-text);
 }
 </style>
