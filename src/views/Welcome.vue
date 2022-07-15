@@ -1,7 +1,7 @@
 <template>
   <div class="welcome">
     <div class="left">
-      <span class="banner-text">CHAT</span>
+      <p class="banner-text">CHAT</p>
     </div>
     <div class="right">
       <div v-if="showLogin">
@@ -48,12 +48,21 @@ export default {
   align-items: center;
 }
 
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .right {
   background-color: var(--color-background-mute);
   border-radius: 10px;
   padding: 2rem;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .right p {
