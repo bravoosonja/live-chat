@@ -11,7 +11,7 @@
     <div class="error">
       <p>{{ error }}</p>
     </div>
-    <button>Sign up</button>
+    <button>Create Account</button>
   </form>
 </template>
 
@@ -21,19 +21,18 @@ import useSignup from "../composables/useSignup";
 
 export default {
   setup(props, context) {
-    const { error, signup } = useSignup();
     // refs
     const displayName = ref("");
     const email = ref("");
     const password = ref("");
-
+    // useSignup
+    const { error, signup } = useSignup();
     const handleSubmit = async () => {
       await signup(email.value, password.value, displayName.value);
       if (!error.value) {
         context.emit("signup");
       }
     };
-
     return { displayName, email, password, handleSubmit, error };
   },
 };

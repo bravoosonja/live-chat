@@ -40,12 +40,14 @@ nav {
   align-items: center;
   width: 60vw;
   margin: auto;
+  background-color: var(--color-background-soft);
 }
 
 nav p {
   margin: 2px auto;
   font-size: 18px;
-  color: var(--color-text);
+
+  color: var(--color-heading);
 }
 
 nav span {
@@ -59,5 +61,6 @@ nav p.email {
 
 nav button {
   width: 150px;
+  color: var(--color-heading);
 }
 </style>
