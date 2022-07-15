@@ -62,3 +62,8 @@ button:focus {
 button:focus-visible {
   box-shadow: none;
 }
+
+.error {
+  font-size: 14px;
+  color: #ff006e;
+}
