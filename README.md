@@ -14,6 +14,10 @@ The objective is to practice using Vue + Vite by developing live chat applicatio
 [Live Demo👈](https://vue-firebase-4dc0a.web.app/)
 
 ![demo](demo/demo (2).gif)
+![dark login](demo/dark-login.png)
+![dark chat](demo/dark-chat.png)
+![light login](demo/light-login.png)
+![light chat](demo/light-chat.png)
 
 # Built with
 
