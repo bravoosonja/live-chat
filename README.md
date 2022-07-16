@@ -23,12 +23,11 @@ The objective is to practice using Vue + Vite by developing live chat applicatio
 
 - Vue JS
 
-  1. Composition API
-  2. Route guard
-  3. Using dark mode in Vue JS
+  - Composition API
+  - Route guard
+  - Using dark mode in Vue JS
 
 - Firebase
-
-1. Connecting Firestore database
-2. Using Firebase for authentication
-3. Hosting on Firebase
+  - Connecting Firestore database
+  - Using Firebase for authentication
+  - Hosting on Firebase
