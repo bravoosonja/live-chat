@@ -13,6 +13,8 @@ The objective is to practice using Vue + Vite by developing live chat applicatio
 
 [Live Demo👈](https://vue-firebase-4dc0a.web.app/)
 
+![demo](demo/demo (2).gif)
+
 # Built with
 
 - Vue 3 & Vite
