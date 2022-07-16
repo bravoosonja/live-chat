@@ -76,8 +76,8 @@ export default {
   color: var(--vt-c-text-light-1);
   background: linear-gradient(
     90deg,
-    hsla(31, 90%, 76%, 1) 0%,
-    hsla(302, 82%, 76%, 1) 100%
+    hsla(259, 84%, 78%, 1) 0%,
+    hsla(206, 67%, 75%, 1) 100%
   );
   padding: 0.3rem 0.5rem;
   border-radius: 5px;
