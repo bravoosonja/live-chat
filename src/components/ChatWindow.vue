@@ -3,7 +3,7 @@
     <div v-if="error">{{ error }}</div>
     <div v-if="documents" class="messages" ref="messages">
       <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
-        <span class="name">{{ doc.name }}</span>
+        <span id="name">{{ doc.name }}</span>
         <span class="message">{{ doc.message }}</span>
         <span class="created-at">{{ doc.createdAt }}</span>
       </div>
@@ -71,14 +71,13 @@ export default {
   font-style: italic;
 }
 
-.name {
+#name {
   grid-area: "name";
-  color: var(--color-heading);
-  background-image: linear-gradient(
-    -225deg,
-    #5271c4 0%,
-    #b19fff 48%,
-    #eca1fe 100%
+  color: var(--vt-c-text-light-1);
+  background: linear-gradient(
+    90deg,
+    hsla(31, 90%, 76%, 1) 0%,
+    hsla(302, 82%, 76%, 1) 100%
   );
   padding: 0.3rem 0.5rem;
   border-radius: 5px;

@@ -54,11 +54,6 @@ button:hover {
   background-color: var(--color-border-hover);
 }
 
-button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
 button:focus-visible {
   box-shadow: none;
 }

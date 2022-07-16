@@ -85,17 +85,25 @@ nav button {
   color: var(--color-text);
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  transform: scale(0.85);
+}
 #toggle-theme {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 10px;
   color: var(--color-text);
+  font-size: 10px;
+  background-color: transparent;
   box-shadow: none;
+  border: none;
+  width: 100px;
 }
 
 #toggle-theme::hover {
   background-color: transparent;
-  color: var(--color-heading);
 }
 </style>
